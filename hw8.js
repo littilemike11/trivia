@@ -26,7 +26,7 @@ const replayButton = document.getElementById("replayButton");
 async function fetchData() {
   try {
     const response = await axios.get(
-      "https://opentdb.com/api.php?amount=10&category=15"
+      "https://opentdb.com/api.php?amount=10&category=15&type=boolean"
       //"https://opentdb.com/api_category.php"
     );
     //for each element in results copy it into question array
@@ -54,13 +54,7 @@ async function fetchData() {
 // pending, resolved, rejected
 // await - waits for function to result
 // await only allowed in async functions
-//fetchData();
-
-//if userAnswer==correctAnswer return true, otherwise return false
-function compareAnswers(userAnswer, correctAnswer) {
-  if (userAnswer == correctAnswer) return true;
-  return false;
-}
+fetchData();
 
 //set user answer to which radio button they clicked
 trueRadio.addEventListener("click", () => {
@@ -70,10 +64,15 @@ falseRadio.addEventListener("click", () => {
   userAnswer = falseRadio.value;
 });
 
-// On next button click
+//if userAnswer==correctAnswer return true, otherwise return false
+function compareAnswers(userAnswer, correctAnswer) {
+  if (userAnswer == correctAnswer) return true;
+  return false;
+}
 
-nextButton.addEventListener("click", submit);
-function submit() {
+// On next button click
+nextButton.addEventListener("click", submitAnswer);
+function submitAnswer() {
   //compare answer
   let correct = compareAnswers(userAnswer, correctAnswer);
   //console.log(correct);
