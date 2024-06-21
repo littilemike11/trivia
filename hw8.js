@@ -161,6 +161,10 @@ function createEndGameText() {
 // }
 function startGame() {}
 
+function getQuizCategory() {}
+
+function displayQuestion() {}
+
 replayButton.addEventListener("click", replay);
 
 async function replay() {
