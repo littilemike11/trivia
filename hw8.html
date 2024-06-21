@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./hw8.css">
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+
+<body>
+  <h1>Video Game Quiz</h1>
+
+  <div id="startScreen"></div>
+
+  <div id="gameScreen">
+    <p id="score">Score : 0</p>
+    <span id="questionCount"></span>
+    <p id="question"> Example Question</p>
+    <br>
+    <br>
+    <input type="radio" name="TOF" id="trueRadio" value="True">
+    <label for="true" id="trueRadio">True</label>
+
+    <input type="radio" name="TOF" id="falseRadio" value="False">
+    <label for="false" id="falseRadio">False</label>
+    <br>
+    <br>
+    <button id="next">Next</button>
+  </div>
+
+  <div id="endGameScreen">
+    <p id="endGameText"></p>
+    <p id="endgameScoreText"></p>
+    <p>Would You like to try again?</p>
+    <button id="replayButton">Restart Quiz</button>
+  </div>
+
+  <script src="./hw8.js"></script>
+</body>
+
+</html>

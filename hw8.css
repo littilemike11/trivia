@@ -1,0 +1,10 @@
+img{
+    width: 500px;
+    height: 700px;
+}
+#question{
+    display: inline;
+}
+#endGameScreen{
+    display: none;
+}
