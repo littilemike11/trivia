@@ -26,8 +26,8 @@ const replayButton = document.getElementById("replayButton");
 async function fetchData() {
   try {
     const response = await axios.get(
-      "https://opentdb.com/api.php?amount=10&category=15&type=boolean"
-      //"https://opentdb.com/api_category.php"
+      //"https://opentdb.com/api.php?amount=10&category=15&type=boolean"
+      "https://opentdb.com/api_category.php"
     );
     //for each element in results copy it into question array
     //api results and questions arr should be same
