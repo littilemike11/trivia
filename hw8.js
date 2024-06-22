@@ -5,7 +5,10 @@ let questionCount = 0; //keeps track which question # user on
 let userAnswer = ""; //stores user current answer
 let correctAnswer = ""; //store correct answer from api
 let questions = []; //store data from api
+let uri = ""; // url to call api
 
+const categoryDropDown = document.getElementById("categories");
+const startQuizButton = document.getElementById("startQuiz");
 const scoreText = document.getElementById("score");
 const questionText = document.getElementById("question");
 const questionCounter = document.getElementById("questionCount");
@@ -23,15 +26,28 @@ const endgameScoreText = document.getElementById("endgameScoreText");
 
 const replayButton = document.getElementById("replayButton");
 //https://opentdb.com/api_config.php
+
+startQuizButton.addEventListener("click", startGame);
+function startGame() {
+  uri = createApi(categoryDropDown.value);
+  console.log(uri);
+  fetchData();
+}
+
+// depening on user category choice, return corresponding url
+function createApi(categoryId) {
+  let url =
+    "https://opentdb.com/api.php?amount=10&type=boolean&category=" + categoryId;
+  console.log(url);
+  return url;
+}
+
 async function fetchData() {
   try {
-    const response = await axios.get(
-      //"https://opentdb.com/api.php?amount=10&category=15&type=boolean"
-      "https://opentdb.com/api_category.php"
-    );
+    const response = await axios.get(uri);
     //for each element in results copy it into question array
     //api results and questions arr should be same
-    console.log(response.data);
+    console.log(response.data.results);
     //   console.log(questions);
     response.data.results.forEach((element) => {
       questions.push(element);
@@ -54,7 +70,7 @@ async function fetchData() {
 // pending, resolved, rejected
 // await - waits for function to result
 // await only allowed in async functions
-fetchData();
+//fetchData();
 
 //set user answer to which radio button they clicked
 trueRadio.addEventListener("click", () => {
@@ -159,9 +175,6 @@ function createEndGameText() {
 // for (score = 0; score <= 10; score++) {
 //   console.log(createEndGameText());
 // }
-function startGame() {}
-
-function getQuizCategory() {}
 
 function displayQuestion() {}
 
