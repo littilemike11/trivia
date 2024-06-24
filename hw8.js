@@ -148,8 +148,8 @@ let endScreenText = [
   "not half good",
   "you're top of the bell curve",
   "Not half bad",
-  "so you do play some games",
-  "Congrats, You are a certified Gamer",
+  "so you do stay at home",
+  "Congrats, You are a certified Nerd",
 ];
 function createEndGameText() {
   let text = "";
@@ -187,10 +187,6 @@ function createEndGameText() {
 //   console.log(createEndGameText());
 // }
 
-//#endregion
-
-function displayQuestion() {}
-
 function resetGameSettings() {
   score = 0;
   scoreText.textContent = "Score : 0";
@@ -218,6 +214,9 @@ function changeCategory() {
   //show start screen
   startScreen.style.display = "block";
 }
+
+//#endregion
+
 //html with js
 //axios -api
 //addeventlistener

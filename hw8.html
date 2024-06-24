@@ -14,53 +14,56 @@
 </head>
 
 <body>
-  <h1>
-    Nerd Bowl
-  </h1>
+  <header>
+    <h1>
+      Nerd Bowl
+    </h1>
+  </header>
 
-  <div id="startScreen">
-    <select id="categories" class="form-select form-select-lg mb-3" aria-label="Large select example">
-      <option selected>Choose a Quiz Category</option>
-      <option value="15">Video Games</option>
-      <!--
+  <main>
+    <div id="startScreen">
+      <select id="categories" class="form-select form-select-lg mb-3" aria-label="Large select example">
+        <option selected>Choose a Quiz Category</option>
+        <option value="15">Video Games</option>
+        <!--
       <option value="16">Board Games</option>
       <option value="29">Comics</option>
       -->
-      <option value="31">Anime & Manga</option>
-      <option value="32">Cartoons & Animations</option>
-    </select>
+        <option value="31">Anime & Manga</option>
+        <option value="32">Cartoons & Animations</option>
+      </select>
 
-    <button id="startQuiz">Start Quiz</button>
-  </div>
-
-  <div id="gameScreen">
-    <p id="score">Score : 0</p>
-    <div id="questionContainer">
-      <span id="questionCount"></span>
-      <p id="question">If you're seeing this, something went wrong ¯\_(ツ)_/¯ </p>
-      <br>
-      <br>
-
-      <input type="radio" class="btn-check" value="True" name="options-base" id="trueRadio" autocomplete="off">
-      <label class="btn" for="trueRadio">True</label>
-
-      <input type="radio" class="btn-check" value="False" name="options-base" id="falseRadio" autocomplete="off">
-      <label class="btn" for="falseRadio">False</label>
-      <br><br>
+      <button id="startQuiz">Start Quiz</button>
     </div>
 
+    <div id="gameScreen">
+      <p id="score">Score : 0</p>
+      <div id="questionContainer">
+        <span id="questionCount"></span>
+        <p id="question">If you're seeing this, something went wrong ¯\_(ツ)_/¯ </p>
+        <br>
+        <br>
 
-    <button id="next">Next</button>
-  </div>
+        <input type="radio" class="btn-check" value="True" name="options-base" id="trueRadio" autocomplete="off">
+        <label class="btn" for="trueRadio">True</label>
 
-  <div id="endGameScreen">
-    <p id="endGameText"></p>
-    <p id="endgameScoreText"></p>
-    <p>Would You like to try again?</p>
-    <button id="replayButton">Restart Quiz</button>
-    <p>Or?</p>
-    <button id="changeCategoryButton">Change Category</button>
-  </div>
+        <input type="radio" class="btn-check" value="False" name="options-base" id="falseRadio" autocomplete="off">
+        <label class="btn" for="falseRadio">False</label>
+        <br><br>
+      </div>
+
+      <button id="next">Next</button>
+    </div>
+
+    <div id="endGameScreen">
+      <p id="endGameText"></p>
+      <p id="endgameScoreText"></p>
+      <p>Would You like to try again?</p>
+      <button id="replayButton">Restart Quiz</button>
+      <p>Or?</p>
+      <button id="changeCategoryButton">Change Category</button>
+    </div>
+  </main>
 
   <script src="./bootstrap-script.js"></script>
   <script src="./hw8.js"></script>
