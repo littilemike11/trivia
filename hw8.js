@@ -29,6 +29,7 @@ const replayButton = document.getElementById("replayButton");
 
 startQuizButton.addEventListener("click", startGame);
 function startGame() {
+  if (categoryDropDown.value == "Choose a Quiz Category") return;
   uri = createApi(categoryDropDown.value);
   console.log(uri);
   fetchData();
