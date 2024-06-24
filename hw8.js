@@ -7,6 +7,7 @@ let correctAnswer = ""; //store correct answer from api
 let questions = []; //store data from api
 let uri = ""; // url to call api
 
+//reference to quiz ui
 const categoryDropDown = document.getElementById("categories");
 const startQuizButton = document.getElementById("startQuiz");
 const scoreText = document.getElementById("score");
@@ -18,23 +19,32 @@ const nextButton = document.getElementById("next");
 const trueRadio = document.getElementById("trueRadio");
 const falseRadio = document.getElementById("falseRadio");
 
+//reference to game screen
+const startScreen = document.getElementById("startScreen");
 const gameScreen = document.getElementById("gameScreen");
 const endGameScreen = document.getElementById("endGameScreen");
 
+//references to endgame ui
 const endGameText = document.getElementById("endGameText");
 const endgameScoreText = document.getElementById("endgameScoreText");
-
 const replayButton = document.getElementById("replayButton");
-//https://opentdb.com/api_config.php
+const changeCategoryButton = document.getElementById("changeCategoryButton");
 
+//api used - https://opentdb.com/api_config.php
+
+//start Game
 startQuizButton.addEventListener("click", startGame);
 function startGame() {
+  if (categoryDropDown.value == "Choose a Quiz Category") return;
   uri = createApi(categoryDropDown.value);
   console.log(uri);
   fetchData();
+  //show game screen
+  gameScreen.style.display = "block";
+  startScreen.style.display = "none";
 }
 
-// depening on user category choice, return corresponding url
+// depending on user category choice, return corresponding url
 function createApi(categoryId) {
   let url =
     "https://opentdb.com/api.php?amount=10&type=boolean&category=" + categoryId;
@@ -121,6 +131,7 @@ function submitAnswer() {
   falseRadio.checked = false;
 }
 
+//#region end game logic
 function endgame() {
   endGameText.textContent = createEndGameText();
   endgameScoreText.textContent =
@@ -137,8 +148,8 @@ let endScreenText = [
   "not half good",
   "you're top of the bell curve",
   "Not half bad",
-  "so you do play some games",
-  "Congrats, You are a certified Gamer",
+  "so you do stay at home",
+  "Congrats, You are a certified Nerd",
 ];
 function createEndGameText() {
   let text = "";
@@ -176,22 +187,36 @@ function createEndGameText() {
 //   console.log(createEndGameText());
 // }
 
-function displayQuestion() {}
-
-replayButton.addEventListener("click", replay);
-
-async function replay() {
-  //reset values
+function resetGameSettings() {
   score = 0;
   scoreText.textContent = "Score : 0";
   questions = [];
   questionCount = 0;
+}
+
+replayButton.addEventListener("click", replay);
+async function replay() {
+  //reset values
+  resetGameSettings();
   await fetchData();
   //hide endgame screen
   endGameScreen.style.display = "none";
   //show game screen
   gameScreen.style.display = "block";
 }
+
+changeCategoryButton.addEventListener("click", changeCategory);
+function changeCategory() {
+  //reset game
+  resetGameSettings();
+  //hide endgame screen
+  endGameScreen.style.display = "none";
+  //show start screen
+  startScreen.style.display = "block";
+}
+
+//#endregion
+
 //html with js
 //axios -api
 //addeventlistener
