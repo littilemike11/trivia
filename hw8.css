@@ -12,3 +12,155 @@ img{
 #endGameScreen, #gameScreen{
     display: none;
 }
+/* from chatgpt*/
+/* Resetting default margins and padding */
+body, h1, p, select, button {
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Body styles */
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+  
+  /* Header styles */
+  header {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  header h1 {
+    font-size: 3rem;
+    color: #333;
+  }
+  
+  /* Main container styles */
+  main {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  /* Start screen styles */
+  #startScreen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  #categories {
+    width: 300px;
+  }
+  
+  #startQuiz {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  #startQuiz:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Game screen styles */
+  #gameScreen {
+    display: none; /* Initially hidden */
+  }
+  
+  #score {
+    font-size: 1.2rem;
+    color: #555;
+  }
+  
+  #questionContainer {
+    margin: 20px 0;
+  }
+  
+  #questionCount {
+    font-size: 1.2rem;
+    color: #555;
+  }
+  
+  input.btn-check {
+    display: none; /* Hide default radio buttons */
+  }
+  
+  label.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  label.btn:hover {
+    background-color: #0056b3;
+  }
+  
+  input.btn-check:checked + label.btn {
+    background-color: #28a745;
+  }
+  
+  #next {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  #next:hover {
+    background-color: #0056b3;
+  }
+  
+  /* End game screen styles */
+  #endGameScreen {
+    display: none; /* Initially hidden */
+    margin-top: 20px;
+  }
+  
+  #endGameText {
+    font-size: 1.5rem;
+    color: #555;
+  }
+  
+  #endgameScoreText {
+    font-size: 1.2rem;
+    color: #555;
+  }
+  
+  #replayButton, #changeCategoryButton {
+    margin-top: 10px;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  #replayButton:hover, #changeCategoryButton:hover {
+    background-color: #0056b3;
+  }
+  
